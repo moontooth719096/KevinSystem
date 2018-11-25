@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using KevinSystem.Models;
 using Microsoft.Extensions.Logging;
+using KevinSystem.ViewModels.HomeViewModel;
 
 namespace KevinSystem.Controllers
 {
@@ -19,8 +20,9 @@ namespace KevinSystem.Controllers
         }
         public IActionResult Index()
         {
-            this.Logger.LogWarning("Index");
-            return View();
+            //this.Logger.LogWarning("Index");
+            HomeViewModel viewmodel = new HomeViewModel();
+            return View(viewmodel);
         }
 
         public IActionResult About()
