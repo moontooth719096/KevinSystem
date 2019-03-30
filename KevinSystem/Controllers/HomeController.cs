@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using KevinSystem.Models;
 using Microsoft.Extensions.Logging;
 using KevinSystem.ViewModels.HomeViewModel;
+using KevinSystem.DB;
 
 namespace KevinSystem.Controllers
 {
@@ -22,6 +23,8 @@ namespace KevinSystem.Controllers
         {
             //this.Logger.LogWarning("Index");
             HomeViewModel viewmodel = new HomeViewModel();
+            Logger.LogWarning("asdasdsa");
+            var aa = new kevinSystemDB().MainFunction_Get();
             return View(viewmodel);
         }
 

@@ -1,0 +1,7 @@
+﻿{
+  "kevinSystemDB": {
+    "ip": "kevindb.czhkcsuh2qzi.us-east-2.rds.amazonaws.com,1433",
+    "user": "kevindb",
+    "pwd": "M971384265"
+  }
+}

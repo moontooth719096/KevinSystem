@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="en" class="easy-sidebar-active">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">*@
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/easy-sidebar.css" rel="stylesheet" />
+    <title>Hello, world!</title>
+</head>
+<body>
+
+    @Html.Partial("_TopBar")
+    
+    <div class="row">
+        <div id="volet_clos" class="col-lg-2">
+            <div id="volet">
+                <div class="navbar-dark sidebar bg-dark" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <!-- 選單 -->
+                            <ul class="nav nav-second-level">
+                                <li><a><i class="fa fa-table fa-fw"></i>hgjjh</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <a href="#volet" aria-hidden="true">滑出</a>
+                <a href="#volet_clos" aria-hidden="true">滑入</a>
+            </div>
+        </div>
+            <div class="col-lg-10">
+                @RenderBody()
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        @*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>*@
+
+        <script src="~/lib/jquery/dist/jquery.slim.min.js"></script>
+        @*<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>*@
+        <script src="~/lib/popper.js/dist/popper.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/lib/angular/angular.js"></script>
+        @*<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>*@
+        <script>
+            //easy-sidebar-toggle-right
+            $(‘.easy - sidebar - toggle’).click(function (e) {
+                e.preventDefault();
+                //$(‘body’).toggleClass(‘toggled-right’);
+                $(‘body’).toggleClass(‘toggled’);
+                //$(‘.navbar.easy-sidebar-right’).removeClass(‘toggled-right’);
+                $(‘.navbar.easy - sidebar’).removeClass(‘toggled’);
+            });
+        </script>
+</body>
+</html> 
