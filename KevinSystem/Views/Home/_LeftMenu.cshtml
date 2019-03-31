@@ -1,0 +1,40 @@
+﻿<nav ng-app="LeftManuData" ng-controller="LeftManuCtrl" id="App" class="navbar bg-dark navbar-dark">
+    <div class="row col-12">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" ng-model="Seach">
+            <div class="input-group-append">
+                <button class="btn btn-success" type="button" ng-click="">Go</button>
+            </div>
+        </div>
+    </div>
+    <div class="row col-lg-12">
+        <ul class="navbar-nav" ng-model="Model">
+            <li class="nav-item"  ng-repeat="x in Model|filter:Seach">
+                <a class="nav-link" href="#">{{x.MainFunctionName}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    var app = angular.module('LeftManuData', []);
+
+    app.controller('LeftManuCtrl', function ($scope, $http) {
+        $scope.Model = '';
+        $scope.Seach='';
+        $scope.ModelGet = function () {
+            var url = "/Home/LeftManu_Get"
+            var req = {
+                method: 'Get',//请求的方式
+                url: url,//请求的地址
+            };
+
+            $http(req).then(function success(data) {
+                $scope.Model = data.data;
+            }).catch(function error(data) {
+                alert('查詢失敗')
+            });
+        }
+        $scope.ModelGet();
+    });
+</script>

@@ -17,14 +17,14 @@ namespace KevinSystem.DB
         }
 
         #region 取得155品項
-        public MainFunctionModel MainFunction_Get()
+        public List<MainFunctionModel> MainFunction_Get()
         {
-            StringBuilder SqlString = new StringBuilder(@"SELECT top 1 [MainFunctionID]
+            StringBuilder SqlString = new StringBuilder(@"SELECT [MainFunctionID]
                                                             ,[MainFunctionName]
                                                             FROM [kevinSystemDB].[dbo].[MainFunctionData]");
 
             object param = new { };
-            return SystemDB.DB_Action_Single<MainFunctionModel>(str_conn, SqlString.ToString(), param);
+            return SystemDB.DB_Action_Multiple<MainFunctionModel>(str_conn, SqlString.ToString(), param);
         }
         #endregion
     }
